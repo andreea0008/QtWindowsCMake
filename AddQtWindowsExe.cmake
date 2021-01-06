@@ -73,7 +73,7 @@ function(add_qt_windows_exe TARGET)
     SETTINGS_FILE
     )
   set(QT_WINDOWS_MULTI_VALUE_ARG)
-  message(STATUS "SETTINGS_FILE PATH  : ${ARGWIN_SETTINGS_FILE}")
+  message(STATUS "SETTINGS_FILE PATH argwin  : ${ARGWIN_SETTINGS_FILE}")
   # parse the function arguments
   cmake_parse_arguments(ARGWIN "${QT_WINDOWS_OPTIONS}" "${QT_WINDOWS_ONE_VALUE_ARG}" "${QT_WINDOWS_MULTI_VALUE_ARG}" ${ARGN})
 
