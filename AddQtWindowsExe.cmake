@@ -77,9 +77,7 @@ function(add_qt_windows_exe TARGET)
   cmake_parse_arguments(ARGWIN "${QT_WINDOWS_OPTIONS}" "${QT_WINDOWS_ONE_VALUE_ARG}" "${QT_WINDOWS_MULTI_VALUE_ARG}" ${ARGN})
   message(STATUS "SETTINGS_FILE PATH argwin  : ${ARGWIN_QML_DIR}")
   message(STATUS "SETTINGS_FILE PATH : ${ARGWIN_SETTINGS_FILE}")
-  
-  COMMAND ${CMAKE_COMMAND} -E copy_if_different ${ARGWIN_SETTINGS_FILE} $<TARGET_FILE_DIR:${TARGET}>
-  
+    
   if(ARGWIN_VERBOSE_LEVEL_DEPLOY)
     message(STATUS "---- QtWindowsCMake Configuration ----")
     message(STATUS "TARGET                : ${TARGET}")
@@ -197,7 +195,7 @@ function(add_qt_windows_exe TARGET)
         --$<$<CONFIG:Debug>:debug>$<$<NOT:$<CONFIG:Debug>>:release>
         $<TARGET_FILE_DIR:${TARGET}>
         COMMAND ${CMAKE_COMMAND} -E copy_if_different ${QT_WINDOWS_QT_CONF} $<TARGET_FILE_DIR:${TARGET}>/qt.conf
-        COMMAND ${CMAKE_COMMAND} -E copy_if_different ${ARGWIN_SETTINGS_FILE} $<TARGET_FILE_DIR:${TARGET}>/settings.ini
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different ${ARGWIN_SETTINGS_FILE} $<TARGET_FILE_DIR:${TARGET}>
         COMMENT "call ${QT_WINDOWS_QT_ROOT}/bin/windeployqt in folder $<TARGET_FILE_DIR:${TARGET}>"
       )
 
