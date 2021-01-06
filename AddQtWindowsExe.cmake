@@ -73,9 +73,10 @@ function(add_qt_windows_exe TARGET)
     SETTINGS_FILE
     )
   set(QT_WINDOWS_MULTI_VALUE_ARG)
-  message(STATUS "SETTINGS_FILE PATH argwin  : ${ARGWIN_QML_DIR}")
   # parse the function arguments
   cmake_parse_arguments(ARGWIN "${QT_WINDOWS_OPTIONS}" "${QT_WINDOWS_ONE_VALUE_ARG}" "${QT_WINDOWS_MULTI_VALUE_ARG}" ${ARGN})
+  message(STATUS "SETTINGS_FILE PATH argwin  : ${ARGWIN_QML_DIR}")
+  message(STATUS "SETTINGS_FILE PATH argwin 2  : ${QML_DIR}")
 
   if(ARGWIN_VERBOSE_LEVEL_DEPLOY)
     message(STATUS "---- QtWindowsCMake Configuration ----")
