@@ -195,7 +195,7 @@ function(add_qt_windows_exe TARGET)
         --$<$<CONFIG:Debug>:debug>$<$<NOT:$<CONFIG:Debug>>:release>
         $<TARGET_FILE_DIR:${TARGET}>
         COMMAND ${CMAKE_COMMAND} -E copy_if_different ${QT_WINDOWS_QT_CONF} $<TARGET_FILE_DIR:${TARGET}>/qt.conf
-        COMMAND ${CMAKE_COMMAND} -E copy_if_different "C:/Users/andre/Desktop/lynx_work/TelmioApp/TelmioApp/resources/settings.ini" $<TARGET_FILE_DIR:${TARGET}>/settings.ini
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different ${ARGWIN_SETTINGS_FILE} $<TARGET_FILE_DIR:${TARGET}>/settings.ini
         COMMENT "call ${QT_WINDOWS_QT_ROOT}/bin/windeployqt in folder $<TARGET_FILE_DIR:${TARGET}>"
       )
 
