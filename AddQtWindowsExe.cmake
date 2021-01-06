@@ -219,9 +219,6 @@ function(add_qt_windows_exe TARGET)
         )
 
       endif()
-
-      message("andreea0008 TARGET_FILE_DIR:", $<TARGET_FILE_DIR:${TARGET}>)
-
     endif()
 
     # ────────── QBC INSTALLER ─────────────────────────
