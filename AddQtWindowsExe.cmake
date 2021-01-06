@@ -70,8 +70,10 @@ function(add_qt_windows_exe TARGET)
     OUTPUT_TARGET
     OUTPUT_INSTALLER_TARGET
     VERBOSE_LEVEL_DEPLOY
+    SETTINGS_FILE
     )
   set(QT_WINDOWS_MULTI_VALUE_ARG)
+  message(STATUS "SETTINGS_FILE PATH  : ${SETTINGS_FILE}")
   # parse the function arguments
   cmake_parse_arguments(ARGWIN "${QT_WINDOWS_OPTIONS}" "${QT_WINDOWS_ONE_VALUE_ARG}" "${QT_WINDOWS_MULTI_VALUE_ARG}" ${ARGN})
 
